@@ -83,7 +83,8 @@ def send_mail(to_list,sub,content):
     msg = MIMEText(content, _subtype='html', _charset='utf8')
     msg['Subject'] = Header(sub,'utf8')
     msg['From'] = Header(me,'utf8')
-    msg['To'] = ";".join(to_list)
+    #msg['To'] = ";".join(to_list)
+    msg['To'] = ",".join(to_list)
     try:
         s = smtplib.SMTP()
         s.connect(mail_host)
